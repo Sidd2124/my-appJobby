@@ -1,0 +1,76 @@
+.JobItem{
+    text-decoration: none;
+}
+
+.JobItems{
+    
+    border-radius: 8px;
+    padding: 10px;
+   
+}
+.CompanyLogo{
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 325px;
+    background-color:rgb(241, 199, 206);
+  
+ 
+
+}
+
+.Bottom{
+    background-color: White;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.Button{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.Top{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 390px;
+
+    margin: 10px;
+    padding: 3px;
+    border-radius: 8px;
+    
+ 
+    font-size: x-small;
+  
+}
+.Description{
+font-size: 13px;
+font-family: Optima, sans-serif;
+}
+
+@media only screen and (max-width: 320px){
+    .Top{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 300px;
+    
+       
+        padding: 0px;
+        border-radius: 8px;
+       margin: 10px;
+     
+        font-size: x-small;
+      
+    }
+    .CompanyLogo{
+        height: 40px;
+        border-radius: 50px;
+        margin-left: 225px;
+        background-color:rgb(241, 199, 206);
+      
+     
+    
+    }
+    
+}

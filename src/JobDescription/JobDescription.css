@@ -1,0 +1,10 @@
+.Siddu{
+    background-image: url(https://i.ibb.co/whkZSLh/pexels-henry-co-1939485.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5;
+    padding: 5px;
+    overflow: auto;
+}
