@@ -1,0 +1,59 @@
+.Center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(https://i.ibb.co/WDdJr38/pexels-lumn-406014.jpg);
+    background-size:cover;
+}
+
+.Back{
+    background-color: rgba(127, 217, 255, 0.012);
+    text-align: center;
+    border-radius: 12px;
+    color: black;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.BoxLogo{
+    height: 800px;
+}
+.Saved{
+    display: flex;
+    flex-direction: row;
+   margin: 20px;
+   width: 100vw;
+    height: 100vh;
+   
+}
+.LowerPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.NoJobs{
+
+ font-size: 50px;
+    font-family:monospace;
+    margin: 10px;
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .Saved{
+        display: flex;
+        flex-direction: column;
+       margin: 0px;
+       width: 100vw;
+        height: 100vh;
+       
+    }
+}

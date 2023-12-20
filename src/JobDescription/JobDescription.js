@@ -1,7 +1,9 @@
 import { Component } from "react";
 
 import Cookies from 'js-cookie'
+import { Redirect } from 'react-router-dom';
 import CircleLoader from "react-spinners/CircleLoader";
+
 
 import SimilarJobs from "../SimilarJobs/SimilarJobs"
 
@@ -9,14 +11,24 @@ import Skills from '../Skills/Skills'
 
 import './JobDescription.css'
 
+
+
 class JobDescription extends Component{
 
-    state={Fulldetails:{},Load:true}
+    state={Fulldetails:{},Load:true,Change:true}
 
     componentDidMount(){
+        
         this.DescriptionDetails()
-    }
 
+        }
+
+
+    Kick=()=>{
+    const {history}=this.props
+    Cookies.remove("JWT");
+    history.replace("/Login");
+    }
 
     DescriptionDetails=async()=>{
        
@@ -66,6 +78,9 @@ const Det={JobDescription:Code.job_details.job_description,
 
 
     this.setState({Fulldetails:Det,Load:false})
+    
+   
+    
 }
 
 LoadingView=()=>{
@@ -81,21 +96,45 @@ LoadingView=()=>{
 SuccessDescription=()=>{
     const{Fulldetails}=this.state
         const{JobDescription,EmploymentType,LifeatCompanyDescription,Logo,ApplyURL,JobTitle,Similar,Skill}=Fulldetails
+        const Result = Cookies.get("JWT");
         
+  if (Result === undefined) {
+    return <Redirect  to="/Login"/>
+  }
     return(
         <div>
+            <button className="LogOut" onClick={this.Kick}>LogOut</button>\
+            <div className="JobInfo">
+               
+              <div>
+             
+                <img className="DescLogo" src={Logo} alt="Logo"/>
+                </div>
+                <div className="Title">
+                 
+                    
            <h1>{JobTitle}</h1>
         <h3>{EmploymentType}</h3>
         <p>{JobDescription}</p>
-              
-                <a href={ApplyURL} target="_blank" rel="noreferrer" >Apply</a>
-                <img src={Logo} alt="Logo"/>
+        <a href={ApplyURL} target="_blank" rel="noreferrer" className="apply">Apply</a>
+
+
+        </div>
+                </div>
+                <div className="LifeatCompany">
+                <h3>Life@Company:</h3>
                 <p>{LifeatCompanyDescription}</p>
-                <div>
+                </div>
+                <div className="LowerSection"> 
+                <h3>Skills:</h3>
+                <div className="Skills">
+                   
                     {Skill.map((each)=><Skills  Skillinfo={each}/>)}
                 </div>
-                <div>
+                <h3>Similar Jobs:</h3>
+                <div className="Skills" >
                 {Similar.map((each)=><SimilarJobs  SimilarJobDetails={each}/>)}
+                </div>
                 </div>
             </div>
     )
@@ -106,6 +145,7 @@ SuccessDescription=()=>{
        
         return(
            <div className="Siddu">
+         
            
             {Load?this.LoadingView():this.SuccessDescription()}
            </div>

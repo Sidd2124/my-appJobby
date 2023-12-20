@@ -45,6 +45,25 @@
     font-size: x-small;
   
 }
+
+.Add{
+    border: 0.7px solid;
+    
+    height: 30px;
+    font-size: 22px;
+   margin-top: 20px;
+   width: 115px;
+   font-size: small;
+   margin-left: 120px;
+   border-radius: 18px;
+   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+   
+      
+}
+.Add:hover{
+    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4, 0 0 25px #03e8f476, 0 0 100px #03e9f4;
+}
+
 .Description{
 font-size: 13px;
 font-family: Optima, sans-serif;
@@ -71,6 +90,10 @@ font-family: Optima, sans-serif;
       
      
     
+    }
+    .Add{
+        font-size: x-small;
+        margin-left: 100px;
     }
     
 }

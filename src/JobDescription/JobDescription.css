@@ -1,10 +1,104 @@
 .Siddu{
-    background-image: url(https://i.ibb.co/whkZSLh/pexels-henry-co-1939485.jpg);
-    background-size: cover;
+    
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5;
     padding: 5px;
     overflow: auto;
+}
+.apply{
+    background-color: rgba(135, 207, 235, 0);
+    color: black;
+padding: 8px;
+border-radius: 9px;
+border: 0.2px solid black;
+text-decoration: none;
+   
+}
+.apply:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.Skills{
+    display: flex;
+    flex-direction: Row;
+    justify-content: space-around;
+   
+}
+
+.JobInfo{
+    background-image: url(https://i.ibb.co/yW1WhcR/pexels-andrea-piacquadio-3760069.jpg);
+    background-size:cover ;
+    display: flex;
+    flex-direction: Row;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-wrap: wrap;
+}
+.Title{
+   
+    width: 800px;
+}
+.DescLogo{
+    height: 400px;
+}
+
+.LowerSection{
+    height: 700px;
+    overflow: auto;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(22, 7, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin: 10px;
+   
+    background-color: rgba(128, 128, 128, 0.388);
+}
+.LifeatCompany{
+    padding: 8px;
+  font-family: cursive;
+    font-size: large;
+}
+
+@media only screen and (max-width: 320px) {
+    .LowerSection {
+        width: 310px;
+        background-color: rgba(128, 128, 128, 0.556);
+        margin: 0;
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+
+    .Skills {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0;
+        width: 310px;
+        flex-wrap: wrap;
+    }
+
+    .LifeatCompany {
+        font-size: small;
+        width: 310px;
+        padding: 5px;
+    }
+
+    .DescLogo {
+        height: 200px;
+        width: 300px;
+    }
+
+    .JobInfo {
+        color: rgb(255, 255, 255);
+        width: 310px;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .apply {
+        background-color: rgba(255, 255, 255, 0.695);
+    }
 }

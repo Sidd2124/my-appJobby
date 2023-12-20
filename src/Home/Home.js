@@ -1,15 +1,17 @@
 import {Component}  from 'react'
 
 import './Home.css'
-import { Redirect } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 
-import Header from '../Header/Header'
+
 
 import CircleLoader from "react-spinners/CircleLoader";
 
 import Cookies from 'js-cookie'
 
 import JobItems from '../JobItems/Jobitems'
+
+
 
 
 class Home extends Component{
@@ -86,8 +88,14 @@ const options={
   }
     
     return(
-      <div>
-        <Header/>
+      <div className='Home'>
+     
+    <div className='TopJobs'>
+     <img className='AppLogo' src="https://assets.ccbp.in/frontend/react-js/logo-img.png" alt="Logo"/>
+     <Link className='SavedJob' to="/SavedJobs">
+  <h1>Saved Jobs</h1>
+</Link>
+</div>
          <h1 className='JobTypeHeading'>Employment Type</h1>
 <div className='JobsMain'>
   
@@ -95,21 +103,22 @@ const options={
      
 <div className='JobTypes'>
   <input type='checkBox' onClick={this.JobTypeFullTime} checked={Type==="FULLTIME"}/>
-  <p>FullTime</p>
+  <h4>FullTime</h4>
 </div>
 <div className='JobTypes'>
   <input type='checkBox' onClick={this.JobTypePartTime} checked={Type==="PARTTIME"}/>
-  <p>PartTime</p>
+  <h4>PartTime</h4>
 </div>
 <div className='JobTypes'>
   <input type='checkBox' onClick={this.JobTypeIntership} checked={Type==="INTERNSHIP"}/>
-  <p>InterShip</p>
+  <h4>InterShip</h4>
 </div>
 <div className='JobTypes'>
   <input type='checkBox' onClick={this.JobTypeFreelance} checked={Type==="FREELANCE"}/>
-  <p>Freelance</p>
+  <h4>Freelance</h4>
  
 </div>
+
 
 </div>
 
@@ -118,10 +127,18 @@ const options={
 
 
       
-<div >
-<button onClick={this.LogOut}>LogOut</button>
+<div  >
+
+
+
+
 {IsLoading?<CircleLoader  color="#36d7b7" />:<div className='JobsItem'>
+
 <h1 className='JobRecomendation'>RecomendedJobs:{CompanyList.length}</h1>
+<button className='LogOut' onClick={this.LogOut}>Logout</button>
+
+
+
 <div className='Jobs'>{CompanyList.map((each) => <JobItems key={each.id} Details={each} />)}
 </div>
 </div> }

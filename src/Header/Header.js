@@ -1,18 +1,22 @@
-import "./Header.css" 
+import React from "react";
+import "./Header.css";
+import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom"; 
 
+const Header = (props) => {
+  const history = useHistory(); 
 
-import Cookies from "js-cookie"
+  const kickOff = () => {
+    Cookies.remove("JWT");
+    history.push("/Login"); 
+  };
 
- 
- const Header=()=>{
-    
+  return (
+    <div className="Header">
+      <h1>Header</h1>
+      <button onClick={kickOff}>Logout</button>
+    </div>
+  );
+};
 
-    return(
-      <div className='Header'>
-        <h1>Header</h1>
-       
-      </div>
-    )
-  }
-
-  export default Header
+export default Header;

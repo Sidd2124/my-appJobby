@@ -7,14 +7,29 @@ import Cookies from 'js-cookie'
 import './Login.css';
 
 class Login extends Component {
-    state={User:"",Password:"",Warning:"",Counter:0,CounterView:true}
+    state={User:"",Password:"",Warning:"",Counter:0,CounterView:true,FirstUser:"",FirstPassword:''}
 
     GetUser=(event)=>{
-        this.setState({User:event.target.value})
+        this.setState({User:event.target.value},()=>{
+            
+                const{User}=this.state
+                if(User==="Sidd"){
+                    this.setState({FirstUser:"rahul"})
+                }else{
+                    this.setState({FirstUser:"@@"})
+                }
+            
+        })
+
     }
 
     GetPassword=(event)=>{
-        this.setState({Password:event.target.value})
+        this.setState({Password:event.target.value},()=>{
+            const{Password}=this.state
+            if(Password==="Sidd@2124"){
+                this.setState({FirstPassword:"rahul@2021"})
+            }
+        })
     }
 
     Success = (Token) => {
@@ -89,10 +104,10 @@ class Login extends Component {
     Login=async(event)=>{
         
         event.preventDefault();
-        const{User,Password}=this.state
+        const{FirstUser,FirstPassword}=this.state
         const New={
-            username:User,
-            password:Password
+            username:FirstUser,
+            password:FirstPassword
         }
         const options={
             method:"POST",
